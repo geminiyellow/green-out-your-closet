@@ -142,7 +142,7 @@ angular.module('routerApp', ['routerRoutes', 'ngAnimate','ngImgur', 'itemService
         vm.photobooth = false;
 
 
-        imgur.setAPIKey('Client-ID 40dbfe0cfea73a7');
+        imgur.setAPIKey('putClientIDHere');
 
 
         imgur.upload(blob).then(function then(model) {
