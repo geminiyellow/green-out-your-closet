@@ -1,0 +1,61 @@
+<style>
+
+#upload{
+	display:block;
+	height: 500px;
+	margin: 0px auto;
+
+}
+
+#videoContainer {
+	width: 60%;
+	margin: 0px auto;
+}
+}
+</style>
+<div id="upload" class="container">
+<h1> We can help you find sustainable items that match your style preferences! </h1>
+<br>
+<br>
+<br>
+
+<div class="col-sm-4">
+
+<button class="btn btn-info" ng-click="photoBooth()"> Take Picture Using Webcam </button>
+<canvas id="photoCap"></canvas>
+<img class="hidden" id="canvasImg">
+
+</div>
+
+<div class="col-sm-4">
+<form>
+<input type="text" ng-model="mirror.pasteLink"></input>
+<button ng-click="imageLink()"> Find something! </button>
+</form>
+</div>
+<div class="col-sm-4">
+<form>
+	<input value="upload!" type="file" id="fileinput" />
+
+	<button ng-click="uploadFile()"> Upload! </button> 
+</form>
+<img id='output'>
+
+</div>	
+
+<div  class"center-block" ng-show="mirror.photobooth" id="videoContainer">
+<video id="photoBooth"></video>
+<button class=btn btn-info ng-click="picCapture()"> Say Cheese </button>
+</div>
+
+<div id="matches" ng-repeat="match in mirror.matches">
+	<img ng-src="{{match.image}}" />
+
+</div>	
+
+
+
+
+
+
+</div>	

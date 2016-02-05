@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>ngImgur Example</title>
+
+    <!-- Beautification! -->
+    <link rel="stylesheet" type="text/css" href="css/Default.css" />
+
+    <!-- Dependencies! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script type="text/javascript" src="js/vendor/imgur.js"></script>
+
+    <!-- Application! -->
+    <script type="text/javascript" src="js/Default.js"></script>
+    <script type="text/javascript" src="js/directives/Drop.js"></script>
+
+</head>
+<body ng-app="imgurApp">
+
+    <section class="drop">
+
+        <h2>{{message}}</h2>
+        <p>suck it</p>
+
+        <input type="text"
+               ng-model="link"
+               readonly="readonly"
+               onclick="this.select();"
+               placeholder="Imgur Link: Please upload an image first..." />
+
+    </section>
+
+</body>
+</html>

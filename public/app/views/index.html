@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title> Green Out Your Closet </title>
+	
+	<!-- set the base path for angular routing -->
+	<base href="/">
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+	
+	<!--<link rel="stylesheet" href="css/style.css">-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+	 <script type="text/javascript" src="bower_components/ng-imgur/module/Imgur.js"></script>
+    <script type="text/javascript" src="bower_components/ng-imgur/module/file.js"></script>
+	<script src="//wzrd.in/standalone/blob-util@latest"></script>
+
+	<!-- Services -->
+
+	<script src="app/services/itemService.js"></script>
+	<script src="app/services/userService.js"></script>
+
+	<!-- Controllers -->
+
+	<script src="app/app.js"></script>
+	<script src="app/app.routes.js"></script>
+
+	  <!-- Enable media queries for old IE -->
+  <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  <![endif]-->
+</head>
+<body class="container" ng-app="routerApp" ng-controller="mainController as main">
+
+<!-- Header and NavBar -->
+
+<header>
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"> Green Out Your Closet </a>
+			</div>
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/"><i class="fa fa-home"></i> Home </a></li>
+				<li><a href="/closet"><i class="fa fa-shopping-bag"></i> Closet </a></li>
+				<li><a href="/magicMirror"><i class="fa fa-search"></i> Search </a></li>
+				<li ng-if="main.isLoggedIn"><i class="fa fa-star"></i><a href="/wishlist">Wishlist</a></li>
+				<li ng-if="main.isLoggedIn"><a ng-click="logout()" href="/"><i class="fa fa-sign-out"></i>Logout</a></li>
+				<li ng-if="!main.isLoggedIn"><a href="/register"><i class="fa fa-user-plus"></i>Sign Up</a></li>
+				<li ng-if="!main.isLoggedIn"><a href="/login"><i class="fa fa-sign-in"></i>Login</a></li>
+			</ul>	
+		</nav>
+<header>
+
+<!-- Main Content and Injected Views -->
+
+<main>
+   
+   <!-- Angular Templating -->
+
+   <div id="content-views">
+   <div ng-view></div>
+   </div>		
+
+</main>								
+
+</body>	
+</html>
